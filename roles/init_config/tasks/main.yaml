@@ -1,0 +1,17 @@
+---
+
+- name: Install bg info
+  win_chocolatey:
+    name: bginfo
+  # become: yes
+  
+- ansible.windows.win_domain_membership:
+    dns_domain_name: bestcorp.net
+    domain_admin_user: "{{ domain_admin_user }}"
+    domain_admin_password: "{{ domain_admin_password }}"
+    domain_ou_path: "{{ domain_ou_path }}"
+    state: domain
+  register: domain_state
+
+- ansible.windows.win_reboot:
+  when: domain_state.reboot_required
