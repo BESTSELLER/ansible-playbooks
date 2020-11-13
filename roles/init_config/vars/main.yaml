@@ -1,3 +1,3 @@
-domain_admin_user: "{{ lookup('hashi_vault', 'secret=ET/data/domain_join:username') }}" 
-domain_admin_password: "{{ lookup('hashi_vault', 'secret=ET/data/domain_join:password') }}" 
+domain_admin_user: "{{ lookup('hashi_vault', 'secret=ET/data/automated_build/domain_join:username') }}" 
+domain_admin_password: "{{ lookup('hashi_vault', 'secret=ET/data/automated_build/domain_join:password') }}" 
 domain_ou_path: "OU=Azure,OU=Servers,OU=Bestseller Computers,DC=bestcorp,DC=net"
