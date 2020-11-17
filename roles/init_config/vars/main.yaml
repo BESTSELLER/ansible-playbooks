@@ -1,4 +1,4 @@
-# domain_admin_user: "{{ lookup('hashi_vault', 'secret=ET/data/automated_build/domain_join:username token={{ vault_token }} url={{ vault_addr }}') }}" 
-domain_admin_password: "{{ lookup('hashi_vault', 'secret=ET/automated_build/domain_join:password token={{ vault_token }} url={{ vault_addr }}') }}" 
-# domain_ou_path: "OU=Azure,OU=Servers,OU=Bestseller Computers,DC=bestcorp,DC=net"
+domain_admin_user: "{{ lookup('hashi_vault', 'secret=ET/data/automated_build/domain_join:username token={{ vault_token }} url={{ vault_addr }}') }}" 
+domain_admin_password: "{{ lookup('hashi_vault', 'secret=ET/data/automated_build/domain_join:password token={{ vault_token }} url={{ vault_addr }}') }}" 
+domain_ou_path: "OU=Azure,OU=Servers,OU=Bestseller Computers,DC=bestcorp,DC=net"
 
