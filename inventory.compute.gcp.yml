@@ -1,0 +1,11 @@
+plugin: gcp_compute
+# zones: # populate inventory with instances in these regions
+#   - europe-west4
+projects:
+  - es-dev-bc86
+filters: []
+hostnames:
+  - name
+
+service_account_file: es-dev-bc86-88d52f8b5e98.json
+auth_kind: serviceaccount
