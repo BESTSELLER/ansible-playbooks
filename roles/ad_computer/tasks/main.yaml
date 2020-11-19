@@ -19,10 +19,9 @@
     description: Resource - Gives Admin rights to {{ ansible_hostname }}
     scope: global
     path: "OU=serverAdmin,OU=Resources,OU=Administration,OU=Bestseller Special,DC=bestcorp,DC=net"
-    domain_server:  {{ domain_server }}
-    domain_username: {{ domain_admin_user }}
-    domain_password: {{ domain_admin_password }}
-
+    domain_server:  "{{ domain_server }}"
+    domain_username: "{{ domain_admin_user }}"
+    domain_password: "{{ domain_admin_password }}"
 
 - name: Adds the Domain group BestcorpServerAdmin{{ ansible_hostname }} to local Administrator group
   win_group_membership:
