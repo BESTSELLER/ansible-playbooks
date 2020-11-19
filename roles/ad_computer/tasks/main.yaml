@@ -18,7 +18,7 @@
     name:  BestcorpServerAdmin{{ ansible_hostname }}
     description: Resource - Gives Admin rights to {{ ansible_hostname }}
     scope: global
-    path: OU=serverAdmin,OU=Resources,OU=Administration,OU=Bestseller Special,DC=bestcorp,DC=net
+    path: "OU=serverAdmin,OU=Resources,OU=Administration,OU=Bestseller Special,DC=bestcorp,DC=net"
     domain_server:  {{ domain_server }}
     domain_username: {{ domain_admin_user }}
     domain_password: {{ domain_admin_password }}
