@@ -36,7 +36,7 @@
 - name: Create Domain group BestcorpServerAdmin{{ ansible_hostname }}
   win_domain_group:
     name:  BestcorpServerAdmin{{ ansible_hostname }}
-    description: Resource: Gives Admin rights to {{ ansible_hostname }}
+    description: Resource - Gives Admin rights to {{ ansible_hostname }}
     scope: global
     path: OU=serverAdmin,OU=Resources,OU=Administration,OU=Bestseller Special,DC=bestcorp,DC=net
 
