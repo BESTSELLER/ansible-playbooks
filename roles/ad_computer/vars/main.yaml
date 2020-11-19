@@ -3,3 +3,5 @@ domain_admin_password: "{{ lookup('hashi_vault', 'secret=ET/data/automated_build
 domain_ou_path: "OU=Azure,OU=Servers,OU=Bestseller Computers,DC=bestcorp,DC=net"
 
 
+ADModify_username: "{{ lookup('hashi_vault', 'secret=ET/data/automated_build/ADModifyAccount:username token={{ vault_token }} url={{ vault_addr }}') }}"
+ADModify_password: "{{ lookup('hashi_vault', 'secret=ET/data/automated_build/ADModifyAccount:password token={{ vault_token }} url={{ vault_addr }}') }}"
