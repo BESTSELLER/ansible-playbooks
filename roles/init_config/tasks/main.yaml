@@ -16,6 +16,7 @@
 - name: Resize the C Drive to it's maximum size 
   win_partition:
     partition_size: -1
+    partition_number: 1
     disk_number: 0
 
 
