@@ -28,11 +28,13 @@
     domain_username: "{{ ADModify_username }}"
     domain_password: "{{ ADModify_password }}"
 
+
 - name: Adds the Domain group BestcorpServerAdmin{{ ansible_hostname }} to local Administrator group
   win_group_membership:
     name: Administrators
     members:
       - BESTCORP\BestcorpServerAdmin{{ ansible_hostname }}
+    ignore_errors: yes
 
 # - name: Remove ActiveDirectory Powershell Module
 #   win_feature:
