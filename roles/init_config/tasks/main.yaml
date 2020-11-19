@@ -3,8 +3,22 @@
 - name: Install bg info
   win_chocolatey:
     name: bginfo
-  # become: yes
-  
+
+- name: Set timezone to 'Romance Standard Time' (GMT+01:00)
+  win_timezone:
+    timezone: Romance Standard Time
+
+- name: Set the region format to Denmark and copy settings to new profiles
+  win_region:
+    format: da-DK
+    copy_settings: yes
+
+- name: Resize the C Drive to it's maximum size 
+  win_partition:
+    partition_size: -1
+    disk_number: 0
+
+
 - name: Ensure server is join to domain
   win_domain_membership:
     dns_domain_name: bestcorp.net
@@ -17,3 +31,9 @@
 - name: Reboot server if required
   win_reboot:
   when: domain_state.reboot_required
+
+- name: Adds the Domain group BestcorpServerAdmin{{ ansible_hostname }} to local Administrator group
+  win_group_membership:
+    name: Administrators
+    members:
+      - BESTCORP\BestcorpServerAdmin{{ ansible_hostname }}
